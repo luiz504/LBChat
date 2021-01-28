@@ -1,0 +1,44 @@
+{
+  "name": "lbchat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "l.bueno <luiz504@hotmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "packages/shared/*"
+    ]
+  },
+  "scripts": {
+    "lint": "lint-staged",
+    "postinstall": "npx husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
+  "lint-staged": {
+    "**/*.+(ts|tsx)": [
+      "eslint --fix --max-warnings 0",
+      "prettier --write"
+    ],
+    "**/*.+(json|css)": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "styled-components": "^5.2.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@lbchat/eslint-config": "*",
+    "@types/styled-components": "^5.1.7",
+    "@types/uuid": "^8.3.0",
+    "husky": "^4.3.7",
+    "lint-staged": "^10.5.3",
+    "typescript": "^4.1.3"
+  }
+}
