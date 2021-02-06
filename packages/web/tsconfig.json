@@ -1,12 +1,6 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "plugins": [
-      {
-        "name": "typescript-styled-plugin",
-        "tags": ["styled", "css", "sty"]
-      }
-    ],
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
